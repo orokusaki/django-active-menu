@@ -57,3 +57,7 @@ nor the `account` menu items are active, using the above example.
     <a href="/some/path/">Change Password</a>
 </p>
 ```
+
+If you don't care about nesting, but you want the tag to add the active class
+when a view name matches the *current * request's view name, you can skip the
+registration step.
