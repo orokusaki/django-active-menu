@@ -36,9 +36,12 @@ on your links (or whateer you want), based on which links are active.
 </p>
 ```
 
-The above example would result in the following when the request was for either
-the `account` view or the `change_password` view, allowing you to keep your top
-level menu items highlighted when their child views are active.
+The above example results in the following when either of the `account` or
+`change_password` menu items are active, allowing you to keep your top level
+menu items highlighted while child views are active as well. There isn't a
+logical limit to the depths at which you can nest your views and there isn't
+any magic. Active Menu simply figures out whether a given view name represents
+an active link based on what you've registered using the `menu_item` function.
 
 ```html
 <p>
@@ -46,8 +49,8 @@ level menu items highlighted when their child views are active.
 </p>
 ```
 
-And the following when neither the `change_password` nor the `account` menu
-items are active.
+The above example results in the following when neither the `change_password`
+nor the `account` menu items are active, using the above example.
 
 ```html
 <p>
