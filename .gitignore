@@ -1,0 +1,24 @@
+# Compiled source and Python-specific stuff #
+######################
+*.py[co]
+*.egg
+*.egg-info
+*.mo
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+
+# Temp directories   #
+######################
+__temp__*
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
