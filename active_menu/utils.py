@@ -6,7 +6,7 @@ from active_menu.menu import MenuItem, Menu
 default_menu = Menu()
 
 # Method alias for the default menu's isactive method
-isactive = default_menu.is_active
+isactive = default_menu.isactive
 
 
 def menu_item(view_name, parent=None):
