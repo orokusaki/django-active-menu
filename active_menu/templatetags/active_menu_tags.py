@@ -14,7 +14,10 @@ def active_class(context, view_name, attribute=True):
     namespace, matches the provided view name, else returns empty unicode.
     """
     # Get the request from the context.
-    request = context['request']
+    try:
+        request = context['request']
+    except KeyError:
+        request = context['view'].request
 
     # Return the active class, if the view name represents the request's view
     if isactive(request, view_name):

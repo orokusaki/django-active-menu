@@ -22,3 +22,10 @@ __temp__*
 ehthumbs.db
 Icon?
 Thumbs.db
+build/lib/active_menu/__init__.py
+build/lib/active_menu/menu.py
+build/lib/active_menu/models.py
+build/lib/active_menu/utils.py
+build/lib/active_menu/templatetags/__init__.py
+build/lib/active_menu/templatetags/active_menu_tags.py
+.pydevproject
