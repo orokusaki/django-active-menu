@@ -7,9 +7,10 @@ links (or whose parents are active) for Django 1.5+
 Usage
 -----
 
-Firstly, add `'active_menu'` to `settings.INSTALLED_APPS`. Don't worry, there
-are no models included with Active Menu. This simply allows you to use
-`{% load active_menu_tags %}` in your templates.
+Optionally, add `'active_menu'` to `settings.INSTALLED_APPS`. This isn't required,
+and there are no models included in Active Menu. This simply allows you to use
+`{% load active_menu_tags %}` in your templates. You can use instead use
+`add_to_builtins('active_menu.templatetags.active_menu_tags')`, if desired.
 
 ```python
 # urls.py (or anywhere where they'll be run before your views are called)
@@ -57,6 +58,8 @@ nor the `account` menu items are active, using the above example.
     <a href="/some/path/">Change Password</a>
 </p>
 ```
+
+### Pro Tip
 
 If you don't care about nesting, but you want the tag to add the active class
 when a view name matches the *current * request's view name, you can skip the

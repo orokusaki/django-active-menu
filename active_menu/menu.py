@@ -73,21 +73,21 @@ class Menu(object):
         Returns whether the menu item represented by the provided view name or
         any of its parent menu items represent the provided request's view.
         """
-        # Get the menu item for the provided view name
-        menu_item = self.get_item(view_name)
-
         # Get the provided request's view name
         request_view_name = request.resolver_match.view_name
+
+        # Return True, if the view name matches the request's view name
+        if view_name == request_view_name:
+            return True
+
+        # Get the menu item for the provided view name
+        menu_item = self.get_item(view_name)
 
         # Get the provided request's menu item or return False
         try:
             request_menu_item = self.get_item(request_view_name)
         except MenuError:
             return False
-
-        # Return True, if the view name matches the request's view name
-        if view_name == request_view_name:
-            return True
 
         # Return whether the menu item matching the provided view name is in
         # the list of ancestors of the provided request's menu item
