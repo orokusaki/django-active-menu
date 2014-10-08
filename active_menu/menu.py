@@ -1,3 +1,7 @@
+from django.conf import settings
+from django.core.urlresolvers import resolve
+
+
 class MenuItem(object):
     """
     A menu item representing a named URL and an optional parent menu item.
@@ -73,12 +77,19 @@ class Menu(object):
         Returns whether the menu item represented by the provided view name or
         any of its parent menu items represent the provided request's view.
         """
+        # Resolve the request
+        resolver_match = resolve(request.path_info)
+
         # Get the provided request's view name
-        request_view_name = request.resolver_match.view_name
+        request_view_name = resolver_match.view_name
 
         # Return True, if the view name matches the request's view name
         if view_name == request_view_name:
             return True
+
+        # Check whether to use registration (defaulting to True)
+        if not getattr(settings, 'ACTIVE_MENU_USE_REGISTRATION', True):
+            return False  # Short circuit, registration not used
 
         # Get the menu item for the provided view name
         menu_item = self.get_item(view_name)
